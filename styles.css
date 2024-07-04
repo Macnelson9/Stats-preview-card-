@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap");
+
+/* General styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-blue-main-bg: #090b1a;
+  --dark-desaturated-blue-card-bg: #1b1938;
+  --soft-violet-accent: #aa5cdb;
+  --white-main-heading-stats: #fff;
+  --slightly-transparent-white-main-paragraph: #ffffffbf;
+  --slightly-transparent-white-stat-heading: #ffffff99;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--very-dark-blue-main-bg);
+  color: var(--white-main-heading-stats);
+  margin: 0;
+  cursor: default;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Styling the body */
+
+.main {
+  padding: 100px 0;
+}
+
+/* Ensuring the card stays in the center of every screen */
+
+.container {
+  width: 70%;
+  max-width: 1128px;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* Styling the content section */
+
+.content-section {
+  background-color: var(--dark-desaturated-blue-card-bg);
+  padding: 40px 60px;
+  width: 50%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.content-section h1 {
+  font-size: 1.8rem;
+}
+
+.content-section span {
+  color: var(--soft-violet-accent);
+}
+
+.content-section p {
+  font-size: 0.9rem;
+  color: var(--slightly-transparent-white-main-paragraph);
+}
+
+/* To make the stats sit next to each other */
+
+.stats-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  font-family: "Inter", sans-serif;
+  margin-top: 40px;
+}
+
+.stats-section span {
+  color: var(--white-main-heading-stats);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.stats-section p {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* styling the image */
+
+.image-container {
+  position: relative;
+  width: 50%;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #aa5cdb91;
+  filter: contrast(150%);
+  filter: saturate(100%);
+}
+
+/* Media queries */
+
+@media (max-width: 1199px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
+  img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .container {
+    flex-direction: column-reverse;
+    width: 90%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content-section {
+    width: 100%;
+    padding: 20px 30px;
+    text-align: center;
+  }
+
+  .content-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .content-section p {
+    line-height: 1.5rem;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+}
